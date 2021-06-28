@@ -1,15 +1,17 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { NavLink } from 'react-router-dom';
 
 function NavbarHead () {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href='/'>Главная</Navbar.Brand>
+            <Navbar.Brand to='/'>Главная</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#features">Ссылка куда-то</Nav.Link>
-                    <Nav.Link href="#pricing">Ещё одна ссылка</Nav.Link>
+                    <NavLink className="nav-item nav-link" to="/">Ссылка куда-то</NavLink>
+                    <NavLink className="nav-item nav-link" to="/">Ещё одна ссылка</NavLink>
                     <NavDropdown title="Менюха" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Жмяк</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Тись</NavDropdown.Item>
@@ -19,7 +21,7 @@ function NavbarHead () {
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#deets">Вход</Nav.Link>
+                    <NavLink className="nav-item nav-link" to="/login">Вход</NavLink>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
