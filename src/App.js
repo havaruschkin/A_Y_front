@@ -1,8 +1,12 @@
-import './App.css';
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import NavbarHead from "./components/Navbar/navbar";
 
 function App() {
   return (
-    <div> <h1>Hello world</h1>  </div>
+      <div className="wrapper">
+          <NavbarHead/>
+      </div>
   )
 }
 
