@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NavLink } from 'react-router-dom';
 
-function NavbarHead () {
+const NavbarHead = ({user}) => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand to='/'>Главная</Navbar.Brand>
@@ -11,7 +11,8 @@ function NavbarHead () {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <NavLink className="nav-item nav-link" to="/">Ссылка куда-то</NavLink>
-                    <NavLink className="nav-item nav-link" to="/">Ещё одна ссылка</NavLink>
+                    {user && (<NavLink className="nav-item nav-link" to="/">Ещё одна ссылка</NavLink>)}
+
                     <NavDropdown title="Менюха" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Жмяк</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Тись</NavDropdown.Item>
@@ -21,7 +22,14 @@ function NavbarHead () {
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <NavLink className="nav-item nav-link" to="/login">Вход</NavLink>
+                    {!user && (
+                        <NavLink className="nav-item nav-link" to="/login">Вход</NavLink>
+                    )}
+                    {user && (
+                        <NavLink className="nav-item nav-link" to="/logout" style={{color: "red"}}>
+                            Выход
+                        </NavLink>
+                    )}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
