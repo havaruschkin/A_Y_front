@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import NavbarHead from "./components/Navbar/navbar";
-import MainPage from "./components/Layout/MainPage";
+import MainPage from "./components/pages/MainPage";
 import {Route, Switch} from 'react-router-dom';
 import LoginPage from "./components/pages/loginPage";
 import authService from "./service/authService";
@@ -27,6 +27,7 @@ class App extends Component{
                 <div>
                     <Switch>
                         <Route path="/" exact component={MainPage} />
+
                         <Route path="/login" component={LoginPage} />
                         <Route path="/logout" component={Logout} />
                     </Switch>

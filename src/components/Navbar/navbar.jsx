@@ -12,7 +12,6 @@ const NavbarHead = ({user}) => {
                 <Nav className="mr-auto">
                     <NavLink className="nav-item nav-link" to="/">Ссылка куда-то</NavLink>
                     {user && (<NavLink className="nav-item nav-link" to="/">Ещё одна ссылка</NavLink>)}
-
                     <NavDropdown title="Менюха" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Жмяк</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Тись</NavDropdown.Item>
